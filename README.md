@@ -1,0 +1,18 @@
+UNIDADE LÓGICA ARITIMÉTICA| VHDL
+--
+--			sel2	sel1	sel1	|		  O		
+--			------------------------------------
+--			 0		 0		 0		|	A	  +	  B
+--			 0 	   0	   1    |	A	  -	  B					
+--			 0  	 1	   0    |	A	  AND	  B
+--			 0  	 1	   1    |	A	  OR	  B
+--			 1  	 0	   0    |	A	  XOR	  B
+--			 1  	 0	   1    |	NOT	  A
+--			 1  	 1	   0    |	NOT	  B
+--			 1  	 1	   1    |	Z
+--
+--			AUTOR: EDWILDSON C. RODRIGUES
+--			DATA: 28/07/2018
+--
+--			UNIVERSIDADE FEDERAL DO VALE DO SÃO FRANCISCO
+--

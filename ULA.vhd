@@ -1,0 +1,48 @@
+--
+--				UNIDADE LÓGICA ARITIMÉTICA 
+--
+--			sel2	sel1	sel1	|		  O		
+--			------------------------------------
+--			 0		 0		 0		|	A	  +	  B
+--			 0 	 0	  	 1    |	A	  -	  B					
+--			 0 	 1	  	 0    |	A	  AND	  B
+--			 0 	 1	  	 1    |	A	  OR	  B
+--			 1 	 0	  	 0    |	A	  XOR	  B
+--			 1 	 0	  	 1    |	NOT	  A
+--			 1 	 1	  	 0    |	NOT	  B
+--			 1 	 1	  	 1    |	Z
+--
+--			AUTOR: EDWILDSON C. RODRIGUES
+--			DATA: 28/07/2018
+--
+--			UNIVERSIDADE FEDERAL DO VALE DO SÃO FRANCISCO
+--
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity ULA is port(
+A,B	:	in		std_logic_vector(3 downto 0);
+O		:	out	std_logic_vector(3 downto 0);
+sel	:	in		std_logic_vector(2 downto 0)	
+);
+end ULA;
+
+Architecture hardware of ULA is
+begin
+process(A,B, sel)
+begin
+
+	case sel is
+		when "000"	=>	O	<=	A	  +  	  B;
+		when "001"	=>	O	<=	A	  -	  B;
+		when "010"	=>	O	<=	A	  AND	  B;
+		when "011"	=>	O	<=	A	  OR	  B;
+		when "100"	=>	O	<=	A	  XOR	  B;
+		when "101"	=>	O	<=	NOT 	A;
+		when "110"	=>	O	<=	NOT	B;
+		when others =>	O	<=	"ZZZZ";
+	end case;
+end process;
+end hardware;
